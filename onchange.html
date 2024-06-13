@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onchange</title>
+</head>
+
+<body>
+    <h1>JavaScript HTML Events</h1>
+    <h2>The onchange Attribute</h2>
+
+    Enter your name: <input type="text" id="fname" onchange="upperCase()">
+    <p>When you leave the input field, a function transforms the input to upper case.</p>
+
+    <script>
+        // function upperCase() { ... }: This line declares a JavaScript function named upperCase(). This function is defined to execute some code when called.
+        function upperCase() {
+            //const x = document.getElementById("fname");: This line retrieves the HTML element with the ID "fname" using the document.getElementById() method and assigns it to the variable x. The document.getElementById() method is a built-in JavaScript function that returns a reference to the element with the specified ID.
+            const x = document.getElementById("fname");
+            // x.value = x.value.toUpperCase();: This line accesses the value property of the input element referenced by the variable x. It converts the value to uppercase using the toUpperCase() method, which is a built-in JavaScript method for converting strings to uppercase. Then, it assigns the uppercase value back to the value property of the input element. This effectively changes the text entered into the input field to uppercase.
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+</body>
+
+</html>

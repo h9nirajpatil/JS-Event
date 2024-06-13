@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove event listener</title>
+    <style>
+        #myDIV {
+            background-color: coral;
+            border: 1px solid;
+            padding: 50px;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        The removeEventListener() method
+The removeEventListener() method removes event handlers that have been attached with the addEventListener() method:
+     -->
+    <h2>JavaScript removeEventListener()</h2>
+
+    <div id="myDIV">
+        <p>This div element has an onmousemove event handler that displays a random number every time you move your
+            mouse inside this orange field.</p>
+        <p>Click the button to remove the div's event handler.</p>
+        <button onclick="removeHandler()" id="myBtn">Remove</button>
+    </div>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = Math.random();
+        }
+
+        function removeHandler() {
+            document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+        }
+    </script>
+    <!-- This HTML document demonstrates the usage of the removeEventListener() method in JavaScript to remove an event handler attached to an element. Let's break down the code:
+
+HTML Structure:
+
+The document contains a <div> element with an ID of myDIV.
+Inside the <div>, there are two <p> paragraphs and a <button> element with an ID of myBtn.
+There's also a <p> element with an ID of demo where the result of the myFunction will be displayed.
+CSS Styling:
+
+The CSS styles define the appearance of the myDIV element. It has a background color of coral, a border of 1 pixel solid, padding of 50 pixels, white text color, and a font size of 20 pixels.
+JavaScript Event Listener Setup:
+
+An event listener is added to the myDIV element for the mousemove event. This listener calls the myFunction function every time the mouse moves over the myDIV element.
+The myFunction function generates a random number using Math.random() and sets the inner HTML of the element with ID demo to this random number.
+Event Handler Removal:
+
+There's a button with the text "Remove" (<button onclick="removeHandler()" id="myBtn">Remove</button>).
+When this button is clicked, it triggers the removeHandler() function.
+Inside removeHandler(), the removeEventListener() method is called on the myDIV element to remove the mousemove event listener previously added.
+The removeEventListener() method takes two parameters: the event type (mousemove) and the event handler function (myFunction).
+In summary, this code sets up an event listener on the myDIV element to display a random number in the demo paragraph whenever the mouse moves over it. The removeHandler() function allows you to remove this event listener by clicking the "Remove" button. After removal, the myDIV element will no longer respond to mouse movement by displaying random numbers. -->
+</body>
+
+</html>

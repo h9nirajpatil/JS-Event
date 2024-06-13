@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmouseover and onmouseout</title>
+</head>
+
+<body>
+    <!-- The onmouseover and onmouseout Events
+The onmouseover and onmouseout events can be used to trigger a function when the user mouses over, or out of, an HTML element: -->
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+        style="background-color:skyblue;width:120px;height:20px;padding:40px;">
+        Mouse Over Me</div>
+
+    <script>
+        //function mOver(obj) { ... }: This line declares a JavaScript function named mOver. This function takes one parameter, obj, which represents the HTML element that triggered the mouseover event.
+        function mOver(obj) {
+            //obj.innerHTML = "Bye";: This line accesses the innerHTML property of the obj element (the element that triggered the mouseover event) and sets its value to "Bye". The innerHTML property represents the HTML content inside the element. By setting it to "Bye", the content of the element will be replaced with the text "Bye" when the mouse moves over the element.
+            obj.innerHTML = "Bye"
+        }
+        // function mOut(obj) { ... }: This line declares another JavaScript function named mOut. Similar to the previous function, it takes one parameter, obj, representing the HTML element that triggered the mouseout event.
+        function mOut(obj) {
+            // obj.innerHTML = "Hello";: This line accesses the innerHTML property of the obj element (the element that triggered the mouseout event) and sets its value to "Hello". Similar to the previous function, this changes the content of the element to "Hello" when the mouse moves out of the element.
+            obj.innerHTML = "Hello"
+        }
+    </script>
+</body>
+
+</html>

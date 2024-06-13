@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage examples</title>
+</head>
+
+<body>
+    <h2>Local Storage Example</h2>
+    <input type="text" id="textInput" placeholder="Enter text here">
+    <p id="note"></p>
+    <br>
+    <button onclick="saveText()">Save Text</button>
+
+    <button onclick="clearStorage()">Clear Storage</button>
+
+    <script>
+        // Function to save text to localStorage
+        function saveText() {
+            // Set an item in the localStorage with key 'saveText' and value as the text input's value
+            localStorage.setItem('saveText', textInput.value);
+            // Set the innerHTML of the note element to a success message
+            document.getElementById("note").innerHTML = "Message : You have successfully saved the text.";
+            // Set the color of the note element to green
+            document.getElementById("note").style.color = "green";
+            // Set the background color of the note element to black
+            document.getElementById("note").style.background = "black";
+        }
+
+        // Function to clear the text from localStorage
+        function clearStorage() {
+            // Remove the item with key 'saveText' from localStorage
+            localStorage.removeItem('saveText');
+            // Set the innerHTML of the note element to a message indicating data removal
+            document.getElementById("note").innerHTML = "Message : You have successfully removed the data.";
+            // Set the color of the note element to red
+            document.getElementById("note").style.color = "red";
+            // Set the background color of the note element to black
+            document.getElementById("note").style.background = "black";
+        }
+
+        // Retrieve the value of 'saveText' from localStorage and set it as the value of the text input, if it exists
+        textInput.value = localStorage.getItem('saveText') || '';
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    Explanation of the script:
+
+function saveText() { ... }: This function is triggered when the "Save Text" button is clicked. It saves the text input value to the localStorage.
+
+localStorage.setItem('saveText', textInput.value);: This line saves the text input value to the localStorage with the key 'saveText'.
+
+document.getElementById("note").innerHTML = "Message : You have successfully saved the text.";: This line sets the innerHTML of the element with the ID 'note' to a success message.
+
+document.getElementById("note").style.color = "green";: This line sets the color of the 'note' element to green.
+
+document.getElementById("note").style.background = "black";: This line sets the background color of the 'note' element to black.
+
+function clearStorage() { ... }: This function is triggered when the "Clear Storage" button is clicked. It removes the item from the localStorage.
+
+localStorage.removeItem('saveText');: This line removes the item with the key 'saveText' from the localStorage.
+
+document.getElementById("note").innerHTML = "Message : You have successfully removed the data.";: This line sets the innerHTML of the element with the ID 'note' to a message indicating successful data removal.
+
+document.getElementById("note").style.color = "red";: This line sets the color of the 'note' element to red.
+
+document.getElementById("note").style.background = "black";: This line sets the background color of the 'note' element to black.
+
+textInput.value = localStorage.getItem('saveText') || '';: This line retrieves the value of 'saveText' from localStorage and sets it as the value of the text input, or sets it to an empty string if it doesn't exist.
+ -->

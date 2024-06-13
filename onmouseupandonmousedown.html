@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmouseup onmousedown</title>
+</head>
+
+<body>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+        style="background-color:green;width:90px;height:20px;padding:40px;">
+        Click Me</div>
+
+    <script>
+        // This function is called when the mouse button is pressed down on the div element. It changes the background color of the div to red and changes its text content to "Release Me".
+        function mDown(obj) {
+            obj.style.backgroundColor = "red";
+            obj.innerHTML = "Release Me";
+        }
+        // This function is called when the mouse button is released after being pressed down on the div element.It changes the background color of the div back to green and changes its text content to "Thank You".
+        function mUp(obj) {
+            obj.style.backgroundColor = "green";
+            obj.innerHTML = "Thank You";
+        }
+        // when you click and hold the mouse button on the "Click Me" div, its background color turns red, and its text changes to "Release Me". When you release the mouse button, the background color changes back to green, and the text changes to "Thank You". These changes are achieved by dynamically modifying the div element's styles and inner content using JavaScript.
+    </script>
+</body>
+
+</html>
